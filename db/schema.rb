@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303064153) do
+ActiveRecord::Schema.define(version: 20150303102616) do
+
+  create_table "mailenables", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mailenables_users", id: false, force: :cascade do |t|
+    t.integer "user_id",       null: false
+    t.integer "mailenable_id", null: false
+  end
+
+  create_table "observations", force: :cascade do |t|
+    t.float    "battery"
+    t.string   "door"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "observations_sensors", id: false, force: :cascade do |t|
+    t.integer "sensor_id",      null: false
+    t.integer "observation_id", null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -28,13 +51,26 @@ ActiveRecord::Schema.define(version: 20150303064153) do
     t.string   "name"
     t.string   "mac_address"
     t.text     "description"
+    t.boolean  "mail_send"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "sensors_settings", id: false, force: :cascade do |t|
+    t.integer "sensor_id",  null: false
+    t.integer "setting_id", null: false
   end
 
   create_table "sensors_users", id: false, force: :cascade do |t|
     t.integer "user_id",   null: false
     t.integer "sensor_id", null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "tag"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

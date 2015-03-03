@@ -1,0 +1,12 @@
+<%= simple_form_for(@observation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :battery %>
+    <%= f.input :door %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

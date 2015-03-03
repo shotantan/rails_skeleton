@@ -1,31 +1,7 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-  config.model Role do
-    list do
-      field :user do
-        pretty_value do
-          user_id = bindings[:object].user_id
-          full_name = bindings[:view].full_name(user_id)
-          bindings[:view].link_to "#{full_name}", bindings[:view].rails_admin.show_path('user', user_id)
-        end
-      end
-      field :users
-    end
-  end
-  config.model Sensor do
-    list do
-      field :user do
-        pretty_value do
-          user_id = bindings[:object].user_id
-          full_name = bindings[:view].full_name(user_id)
-          bindings[:view].link_to "#{full_name}", bindings[:view].rails_admin.show_path('user', user_id)
-        end
-      end
-      field :user
-    end
-  end
-
+  
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user

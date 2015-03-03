@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :observations
+
+  resources :settings
+
+  resources :mailenables
+
+  resources :mail_enables
+
   resources :sensors
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
