@@ -24,3 +24,6 @@ gem 'devise-i18n-views'
 gem 'less-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'twitter-bootstrap-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'sass-rails'
