@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sensors
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { registrations: "registrations" } do
    # get'users/sign_out'=>'devise/sessions#destroy'
