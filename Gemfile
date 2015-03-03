@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
+gem 'rails', '~>4.2.0'
+
 gem 'rails'
 group :development, :test do
   gem 'sqlite3'
@@ -17,7 +20,6 @@ gem "jquery-rails"
 gem 'cancancan'
 gem 'rails_admin'
 gem 'turbolinks'
-gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
